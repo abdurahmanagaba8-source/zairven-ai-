@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10100e">
+<title>ZAIRVÉN AI | Market Intelligence</title>
+<style>
+:root {
+  --bg:#10100e;
+  --panel:#191916;
+  --gold:#d6b66d;
+  --muted:#99958a;
+  --line:#383328;
+  --white:#f3eee2;
+  --green:#48c78e;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:Arial,sans-serif;
+}
+header {
+  padding:22px 18px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo {color:var(--gold);font-size:23px;font-weight:800;letter-spacing:3px}
+.sub {color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:5px}
+.status {font-size:10px;color:var(--green);border:1px solid #315c45;padding:7px 10px;border-radius:20px}
+main {max-width:850px;margin:auto;padding:20px 15px}
+h2 {font-size:14px;letter-spacing:1px;color:var(--gold);margin:26px 0 13px}
+.cards {display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card {
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:17px;
+}
+.card small {color:var(--muted);font-size:10px;letter-spacing:1px}
+.card h3 {font-size:23px;margin:10px 0 5px}
+.card p {font-size:11px;color:var(--muted);margin:0}
+.panel {
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:18px;margin-bottom:14px;
+}
+.row {display:flex;justify-content:space-between;align-items:center;gap:10px}
+.gold {color:var(--gold)}
+.muted {color:var(--muted);font-size:12px}
+.wait {
+  text-align:center;padding:20px;background:#222019;
+  border-radius:10px;margin-top:15px;
+}
+.wait strong {font-size:29px;color:var(--gold);letter-spacing:3px}
+button,.upload {
+  background:#28251e;color:var(--gold);
+  border:1px solid var(--gold);border-radius:8px;
+  padding:12px 15px;font-size:12px;cursor:pointer;
+}
+button:active {opacity:.7}
+.controls {display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+button.active {background:var(--gold);color:#15130f}
+input[type=file] {display:none}
+#preview {
+  display:none;width:100%;margin-top:15px;
+  border-radius:8px;border:1px solid var(--line);
+}
+footer {
+  text-align:center;color:var(--muted);font-size:10px;
+  padding:30px 10px;letter-spacing:1px;
+}
+hr {border:0;border-top:1px solid var(--line);margin:15px 0}
+@media(max-width:420px) {
+  .logo {font-size:19px}
+  .cards {gap:8px}
+  .card {padding:13px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">ZAIRVÉN</div>
+    <div class="sub">AI MARKET INTELLIGENCE</div>
+  </div>
+  <div class="status">● SYSTEM ONLINE</div>
+</header>
+
+<main>
+  <div class="row">
+    <div>
+      <div class="gold" style="font-size:11px;letter-spacing:2px">
+        TRADING TERMINAL
+      </div>
+      <h1 style="font-size:23px;margin:8px 0">Market Overview</h1>
+      <div class="muted">Your market analysis workspace</div>
+    </div>
+    <div class="muted">VERSION 1.0</div>
+  </div>
+
+  <h2>MARKETS</h2>
+  <div class="cards">
+    <div class="card">
+      <small>FOREX MARKET</small>
+      <h3>GBPUSD</h3>
+      <p>Major currency pair</p>
+    </div>
+    <div class="card">
+      <small>SYNTHETIC MARKET</small>
+      <h3>V75</h3>
+      <p>Volatility 75 Index</p>
+    </div>
+  </div>
+
+  <h2>ANALYSIS ENGINE</h2>
+  <div class="panel">
+    <div class="row">
+      <strong>Market Decision</strong>
+      <span class="gold" style="font-size:10px">DEMO MODE</span>
+    </div>
+    <div class="wait">
+      <strong>WAIT</strong>
+      <p class="muted">No verified market data connected</p>
+    </div>
+    <hr>
+    <div class="row">
+      <span class="muted">Market structure</span>
+      <span>Not analysed</span>
+    </div>
+    <hr>
+    <div class="row">
+      <span class="muted">Liquidity</span>
+      <span>Not analysed</span>
+    </div>
+    <hr>
+    <div class="row">
+      <span class="muted">Entry / Stop Loss / TP</span>
+      <span>Pending</span>
+    </div>
+    <hr>
+    <div class="row">
+      <span class="muted">Confidence score</span>
+      <span>Not available</span>
+    </div>
+  </div>
+
+  <h2>SCREENSHOT ANALYSIS</h2>
+  <div class="panel">
+    <strong>Upload TradingView Chart</strong>
+    <p class="muted">Select a chart screenshot for the future AI analysis module.</p>
+    <label class="upload" for="chartFile">＋ Choose chart image</label>
+    <input type="file" id="chartFile" accept="image/*">
+    <img id="preview" alt="Selected chart preview">
+    <p class="muted" id="fileStatus">No image selected</p>
+    <p class="muted">Image preview only. AI interpretation will be added in a later stage.</p>
+  </div>
+
+  <h2>OUR STRATEGY</h2>
+  <div class="panel">
+    <div class="gold" style="font-weight:bold;line-height:2">
+      CHoCH → BOS → RETEST → REJECTION → ENTRY
+    </div>
+    <p class="muted">
+      Higher timeframe direction · Liquidity sweep ·
+      Confirmation · Risk management
+    </p>
+  </div>
+
+  <h2>LIVE MARKET INTELLIGENCE</h2>
+  <div class="panel">
+    <div class="row">
+      <strong>Live data connection</strong>
+      <span style="color:#d6b66d;font-size:11px">NOT CONNECTED</span>
+    </div>
+    <p class="muted">
+      Live market prices and candle-close analysis
+      will be integrated in a future development stage.
+    </p>
+  </div>
+
+  <h2>RISK MANAGEMENT</h2>
+  <div class="panel">
+    <div class="row">
+      <span class="muted">Maximum planned risk</span>
+      <strong>1%</strong>
+    </div>
+    <hr>
+    <div class="row">
+      <span class="muted">Minimum planned RR</span>
+      <strong>1:2</strong>
+    </div>
+    <hr>
+    <div class="row">
+      <span class="muted">Trade execution</span>
+      <strong>Disabled</strong>
+    </div>
+  </div>
+</main>
+
+<footer>
+  ZAIRVÉN AI · BUILT WITH PURPOSE<br><br>
+  IN ALLAH WE TRUST
+</footer>
+
+<script>
+const fileInput = document.getElementById('chartFile');
+const preview = document.getElementById('preview');
+const status = document.getElementById('fileStatus');
+
+fileInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    status.textContent = 'Please select an image file.';
+    return;
+  }
+
+  if (file.size > 10 * 1024 * 1024) {
+    status.textContent = 'Image must be smaller than 10 MB.';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    preview.src = event.target.result;
+    preview.style.display = 'block';
+    status.textContent = 'Image selected: ' + file.name;
+  };
+  reader.readAsDataURL(file);
+});
+</script>
+</body>
+</html>
